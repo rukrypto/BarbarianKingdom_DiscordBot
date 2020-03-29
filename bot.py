@@ -31,9 +31,7 @@ async def on_command_error(ctx, error):
         await ctx.send("Comando no valido.")
 '''
 
-
 last_kills = []
-
 
 @tasks.loop(seconds=20)
 async def killbot():
@@ -50,84 +48,90 @@ async def killbot():
             event_id = kill_info['EventId']
 
             
-            if event_id
+            if event_id not in last_kills:
+                #TODO
+                last_kills.append(event_id)
+
+                if len(last_kills) <= 15:
+                    last_kills.pop(0)
 
 
-            battle_id = kill_info['BattleId']
-            kill_area = kill_info['KillArea']
-            time_stamp = kill_info['TimeStamp']
-            
-            #TODO-----------------------
-            killer_info = kill_info['Killer']
+                battle_id = kill_info['BattleId']
+                kill_area = kill_info['KillArea']
+                time_stamp = kill_info['TimeStamp']
+                
+                #TODO-----------------------
+                killer_info = kill_info['Killer']
 
-            killer_guild_name = killer_info['GuildName']
-            killer_alliance_tag = killer_info['AllianceTag']
-            killer_item_power = round(killer_info['AverageItemPower'])
-            killer_kill_fame = killer_info['KillFame']
-            killer_name = killer_info['Name']
+                killer_guild_name = killer_info['GuildName']
+                killer_alliance_tag = killer_info['AllianceTag']
+                killer_item_power = round(killer_info['AverageItemPower'])
+                killer_kill_fame = killer_info['KillFame']
+                killer_name = killer_info['Name']
 
-            killer_equipment_info = killer_info['Equipment']
+                killer_equipment_info = killer_info['Equipment']
 
-            killer_equipment = []
+                killer_equipment = []
 
-            #pprint(killer_equipment_info)
+                #pprint(killer_equipment_info)
 
-            for key in killer_equipment_info:
-                #print(f'equipo:{killer_equipment_info[key]}, tipo: {type(killer_equipment_info[key])}')
-                if killer_equipment_info[key] != None:
-                    killer_equipment.append((key, killer_equipment_info[key]['Type']))
-                else:
-                    killer_equipment.append((key, 'None'))
-            #print(killer_equipment)
-
-
-            #TODO-----------------------
-            participants_info = kill_info['Participants']
-            participants_damage_healing = []
-            for participant_info in participants_info:
-                participant_damage_done = round(participant_info['DamageDone'])
-                participant_healing_done = round(participant_info['SupportHealingDone'])
-                participant_name = participant_info['Name']
-                if participant_damage_done > 0:
-                    participants_damage_healing.append((participant_name, participant_damage_done))
-                if participant_healing_done > 0:
-                    participants_damage_healing.append((participant_name, participant_healing_done))
-
-            #TODO-----------------------
-            victim_info = kill_info['Victim']
-
-            victim_guild = victim_info['GuildName']
-            victim_alliance_tag = victim_info['AllianceTag']
-            victim_item_power = round(victim_info['AverageItemPower'])
-            victim_name = victim_info['Name']
-
-            victim_equipment_info = victim_info['Equipment']
-
-            victim_equipment = []
-
-            for key in victim_equipment_info:
-                if victim_equipment_info[key] != None:
-                    victim_equipment.append((key, victim_equipment_info[key]['Type']))
-                else:
-                    victim_equipment.append((key, 'None'))
-                        
-            #print(victim_equipment)
-
-            victim_inventory_info = victim_info['Inventory']
-
-            victim_inventory = []
-
-            for item_info in victim_inventory_info:
-                if item_info != None:
-                    victim_inventory.append(item_info['Type'])
-            
+                for key in killer_equipment_info:
+                    #print(f'equipo:{killer_equipment_info[key]}, tipo: {type(killer_equipment_info[key])}')
+                    if killer_equipment_info[key] != None:
+                        killer_equipment.append((key, killer_equipment_info[key]['Type']))
+                    else:
+                        killer_equipment.append((key, 'None'))
+                #print(killer_equipment)
 
 
-            print(f'{killer_name} has killed {victim_name}')
-            #await ctx.send(f'{killer_name} has killed {victim_name}')
-            await channel.send(f'{killer_name} has killed {victim_name}')
-            continue
-        #print('nope')
+                #TODO-----------------------
+                participants_info = kill_info['Participants']
+                participants_damage_healing = []
+                for participant_info in participants_info:
+                    participant_damage_done = round(participant_info['DamageDone'])
+                    participant_healing_done = round(participant_info['SupportHealingDone'])
+                    participant_name = participant_info['Name']
+                    if participant_damage_done > 0:
+                        participants_damage_healing.append((participant_name, participant_damage_done))
+                    if participant_healing_done > 0:
+                        participants_damage_healing.append((participant_name, participant_healing_done))
+
+                #TODO-----------------------
+                victim_info = kill_info['Victim']
+
+                victim_guild = victim_info['GuildName']
+                victim_alliance_tag = victim_info['AllianceTag']
+                victim_item_power = round(victim_info['AverageItemPower'])
+                victim_name = victim_info['Name']
+
+                victim_equipment_info = victim_info['Equipment']
+
+                victim_equipment = []
+
+                for key in victim_equipment_info:
+                    if victim_equipment_info[key] != None:
+                        victim_equipment.append((key, victim_equipment_info[key]['Type']))
+                    else:
+                        victim_equipment.append((key, 'None'))
+                            
+                #print(victim_equipment)
+
+                victim_inventory_info = victim_info['Inventory']
+
+                victim_inventory = []
+
+                for item_info in victim_inventory_info:
+                    if item_info != None:
+                        victim_inventory.append(item_info['Type'])
+                
+
+
+                print(f'{killer_name} has killed {victim_name}')
+                #await ctx.send(f'{killer_name} has killed {victim_name}')
+                await channel.send(f'{killer_name} has killed {victim_name}')
+                continue
+            else:
+                print('Kill repetida')
 
 
 @client.command(aliases=["lag"])

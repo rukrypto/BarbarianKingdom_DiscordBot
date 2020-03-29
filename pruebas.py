@@ -1,3 +1,4 @@
+'''
 #url = "https://assets.albiononline.com/assets/images/killboard/gear.png?u90a4772a"
 url = "https://www.mediafire.com/convkey/fa3b/n1lw1ua3qrdthdnzg.jpg"
 
@@ -21,4 +22,11 @@ bg_w, bg_h = background.size
 offset = (0, 0)
 background.paste(img, offset)
 background.save('out.png')
+'''
+
+lista = ['1', '2', '3', '4']
+
+lista.pop(0)
+
+print(lista)
 
