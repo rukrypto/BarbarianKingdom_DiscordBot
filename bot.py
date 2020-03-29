@@ -31,6 +31,10 @@ async def on_command_error(ctx, error):
         await ctx.send("Comando no valido.")
 '''
 
+
+last_kills = []
+
+
 @tasks.loop(seconds=20)
 async def killbot():
     URL = "https://gameinfo.albiononline.com/api/gameinfo/events?limit=50&offset=0"
@@ -42,9 +46,14 @@ async def killbot():
     #pprint(data)
     for kill_info in data:
         if kill_info['Killer']['GuildName'] == 'barbarian kingdom' or kill_info['Victim']['GuildName'] == 'barbarian kingdom':
+            
+            event_id = kill_info['EventId']
+
+            
+            if event_id
+
 
             battle_id = kill_info['BattleId']
-            event_id = kill_info['EventId']
             kill_area = kill_info['KillArea']
             time_stamp = kill_info['TimeStamp']
             
