@@ -10,7 +10,7 @@ client = commands.Bot(command_prefix="bk ")
 
 @client.event
 async def on_ready():
-    #killbot.start()
+    killbot.start()
     await client.change_presence(status=discord.Status.online, activity=discord.Game("Albion Online"))
     print("Bot is ready")
 
@@ -30,7 +30,7 @@ async def on_command_error(ctx, error):
     if isinstance(error, commands.CommandNotFound):
         await ctx.send("Comando no valido.")
 '''
-'''
+
 @tasks.loop(seconds=20)
 async def killbot():
     URL = "https://gameinfo.albiononline.com/api/gameinfo/events?limit=50&offset=0"
@@ -119,7 +119,7 @@ async def killbot():
             await channel.send(f'{killer_name} has killed {victim_name}')
             continue
         #print('nope')
-'''
+
 
 @client.command(aliases=["lag"])
 async def ping(ctx):
@@ -128,11 +128,11 @@ async def ping(ctx):
 
 @client.command(aliases=["embed"])
 async def displayEmbed(ctx):
+    #channel = client.get_channel(692768105906176064)
     embed = discord.Embed(
         title = 'Title',
         description = 'Description',
-        colour = discord.Color(#FF0050)
-    )
+        colour = discord.Color(1))
 
     embed.set_footer(text='this is a footer')
     embed.set_image(url='https://gameinfo.albiononline.com/api/gameinfo/items/T8_2H_DOUBLEBLADEDSTAFF.png?count=1&quality=3')
@@ -143,6 +143,7 @@ async def displayEmbed(ctx):
     embed.add_field(name='field name3', value='field value3', inline=True)
 
     await ctx.send(embed=embed)
+    #await channel.send(embed=embed)
 
 
 @client.command()
@@ -161,4 +162,4 @@ async def ban(ctx, member : discord.Member, *, reason=None):
     await member.ban(reason=reason)
 
 
-client.run("NjkyNzczNTE2MjU2NDc3MTk2.XnzZuw.iH6xX0hgr_rKbrNApVXqXKW5zqE")
+client.run("NjkyNzczNTE2MjU2NDc3MTk2.XoAUGQ.l67Jb9HsfjwjcbUdyWjvjWN5uZE")
