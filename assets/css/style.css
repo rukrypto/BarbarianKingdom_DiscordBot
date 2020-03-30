@@ -1,0 +1,280 @@
+* {
+  font-family: monospace; }
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #222; }
+  body .container {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    max-width: 1140px; }
+    body .container > .row {
+      margin: 0;
+      padding: 0;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+
+.ruMid__KillBot > .container {
+  padding: 5px;
+  max-width: 950px;
+  background-color: #D8B696;
+  background-color: #EAEAE6; }
+  .ruMid__KillBot > .container > .row {
+    -webkit-box-align: initial;
+    -ms-flex-align: initial;
+    align-items: initial;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background-color: #DEDEDA; }
+
+.ruMid__KillBot__Character {
+  width: 40%;
+  background-color: #CECECB;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+  .ruMid__KillBot__Character.-Killer .ItemPower {
+    right: 0; }
+  .ruMid__KillBot__Character.-Victim .ItemPower {
+    left: 0; }
+  .ruMid__KillBot__Character__Head {
+    padding: 0;
+    margin-bottom: -15px; }
+    .ruMid__KillBot__Character__Head .Name {
+      margin: 0 0 5px;
+      padding: 10px 0;
+      color: white;
+      font-size: 21px;
+      line-height: 1;
+      text-align: center;
+      background-color: #5A5A54; }
+    .ruMid__KillBot__Character__Head .Alliance, .ruMid__KillBot__Character__Head .Guild {
+      margin: 0;
+      font-size: 17px; }
+    .ruMid__KillBot__Character__Head .KillFame, .ruMid__KillBot__Character__Head .DeathFame {
+      margin: 0;
+      font-size: 16px;
+      text-align: center; }
+    .ruMid__KillBot__Character__Head .KillFame {
+      color: green; }
+    .ruMid__KillBot__Character__Head .DeathFame {
+      color: darkred; }
+    .ruMid__KillBot__Character__Head .aux {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+  .ruMid__KillBot__Character__Body {
+    position: relative;
+    padding-top: 108.33333%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("https://assets.albiononline.com/assets/images/killboard/gear.png?u90a4772a"); }
+    .ruMid__KillBot__Character__Body__Item {
+      margin: auto;
+      position: absolute;
+      width: 21.875%;
+      height: 20.19231%;
+      background-color: green;
+      opacity: .4; }
+      .ruMid__KillBot__Character__Body__Item.-Bag {
+        top: 7.08333%;
+        left: 6.66667%; }
+      .ruMid__KillBot__Character__Body__Item.-Head {
+        top: 9.375%;
+        left: 0;
+        right: 0; }
+      .ruMid__KillBot__Character__Body__Item.-Cape {
+        top: 7.08333%;
+        right: 7.08333%; }
+      .ruMid__KillBot__Character__Body__Item.-MainHand {
+        top: -18%;
+        bottom: 0;
+        left: 12.5%; }
+      .ruMid__KillBot__Character__Body__Item.-Armor {
+        top: -18%;
+        left: 0;
+        right: 0;
+        bottom: 0; }
+      .ruMid__KillBot__Character__Body__Item.-OffHand {
+        top: -18%;
+        bottom: 0;
+        right: 12.5%; }
+      .ruMid__KillBot__Character__Body__Item.-Food {
+        left: 6.66667%;
+        bottom: 25%; }
+      .ruMid__KillBot__Character__Body__Item.-Shoes {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: -25%; }
+      .ruMid__KillBot__Character__Body__Item.-Potion {
+        right: 6.66667%;
+        bottom: 24%; }
+      .ruMid__KillBot__Character__Body__Item.-Mount {
+        left: 0;
+        right: 0;
+        bottom: 6%; }
+  .ruMid__KillBot__Character__Footer {
+    position: relative; }
+    .ruMid__KillBot__Character__Footer .ItemPower {
+      margin: auto;
+      padding: 0;
+      position: absolute;
+      bottom: 0;
+      width: 60px;
+      height: 60px;
+      color: white;
+      font-size: 20px;
+      line-height: 60px;
+      text-align: center;
+      border-radius: 50%;
+      background-color: #5A5A54; }
+
+.ruMid__KillBot__Details {
+  width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+  .ruMid__KillBot__Details__Head img {
+    display: block;
+    margin: 0 auto;
+    padding: 5px 0;
+    max-width: 90px;
+    height: auto; }
+  .ruMid__KillBot__Details__Head .Title {
+    margin: 0;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center; }
+  .ruMid__KillBot__Details__Body {
+    padding-top: 10px; }
+    .ruMid__KillBot__Details__Body .Group, .ruMid__KillBot__Details__Body .Participants {
+      margin: 0;
+      font-size: 17px;
+      padding: 0 8px;
+      line-height: 1;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between; }
+    .ruMid__KillBot__Details__Body .Participants {
+      margin-bottom: 10px; }
+    .ruMid__KillBot__Details__Body .Damage, .ruMid__KillBot__Details__Body .Healing {
+      margin: 0;
+      padding: 0 8px;
+      font-size: 15px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between; }
+    .ruMid__KillBot__Details__Body .Damage {
+      color: darkred; }
+    .ruMid__KillBot__Details__Body .Healing {
+      color: green; }
+  .ruMid__KillBot__Details__Footer {
+    margin: auto;
+    margin-bottom: 0;
+    display: block; }
+    .ruMid__KillBot__Details__Footer .DeathFame .Icon {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      vertical-align: middle;
+      background-size: auto 30px;
+      background-repeat: no-repeat;
+      background-image: url("https://assets.albiononline.com/assets/images/killboard/fame-list__icons.png");
+      -webkit-filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5));
+      filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5)); }
+    .ruMid__KillBot__Details__Footer .DeathFame .Fame {
+      margin: 0;
+      line-height: 1;
+      font-size: 18px;
+      text-align: center;
+      font-weight: bold;
+      vertical-align: middle; }
+    .ruMid__KillBot__Details__Footer .Time {
+      margin: 0;
+      padding: 5px 8px 15px;
+      font-size: 14px;
+      font-weight: 500;
+      text-align: center; }
+
+.ruMid__KillBot__Inventory {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start; }
+  .ruMid__KillBot__Inventory__Head {
+    width: 100%; }
+    .ruMid__KillBot__Inventory__Head .Title {
+      margin: 0;
+      padding: 10px;
+      color: white;
+      font-size: 21px;
+      line-height: 1;
+      text-align: left;
+      background-color: #5A5A54; }
+  .ruMid__KillBot__Inventory .Item {
+    position: relative;
+    width: 11.05263vw;
+    height: 11.05263vw;
+    max-width: 105px;
+    max-height: 105px;
+    background-color: green;
+    border: .1px solid red;
+    opacity: .4; }
+
+.ruMid__KillBot .Item .Count {
+  width: 20px;
+  height: 20px;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  font-size: 11px;
+  text-align: center;
+  font-weight: 500;
+  line-height: 22px;
+  z-index: 1;
+  color: red;
+  background-color: blue;
+  border-radius: 50%; }

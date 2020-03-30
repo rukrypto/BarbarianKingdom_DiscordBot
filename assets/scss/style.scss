@@ -1,0 +1,386 @@
+* {
+	font-family: monospace;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #222;
+
+	& .container {
+		margin: 0 auto;
+		padding: 0;
+		width: 100%;
+		max-width: 1140px;
+
+		& > .row {
+			margin: 0;
+			padding: 0;
+
+			display: flex;
+			flex-wrap: wrap;
+		}
+	}
+}
+
+.ruTop {}
+
+.ruMid {
+
+	&__KillBot{
+
+		& > .container {
+			padding: 5px;
+			max-width: 950px;
+
+			background-color: #D8B696;
+			background-color: #EAEAE6;
+
+			& > .row {
+				align-items: initial;
+				justify-content: center;
+	
+				background-color: #DEDEDA;
+			}
+		}
+
+		&__Character {
+			width: 480px / 1200px * 100%;
+			background-color: #CECECB;
+
+			display: flex;
+			justify-content: space-between;
+			flex-direction: column;
+
+			&.-Killer {
+
+				& .ItemPower {
+					right: 0;
+				}
+			}
+
+			&.-Victim {
+				
+				& .ItemPower {
+					left: 0;
+				}
+			}
+
+			&__Head {
+				padding: 0;
+				margin-bottom: -15px;
+
+				& .Name {
+					margin: 0 0 5px;
+					padding: 10px 0;
+					color: white;
+					font-size: 21px;
+					line-height: 1;
+					text-align: center;
+
+					background-color: #5A5A54;
+				}
+
+				& .Alliance, & .Guild {
+					margin: 0;
+					font-size: 17px;
+				}
+
+				& .KillFame, & .DeathFame {
+					margin: 0;
+					font-size: 16px;
+					text-align: center;
+				}
+
+				& .KillFame {
+					color: green;
+				}
+
+				& .DeathFame {
+					color: darkred;
+				}
+
+				& .aux {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+			}
+
+			&__Body {
+				position: relative;
+				// width: 480px;
+				// height: 520px;
+				padding-top: 520px / 480px * 100%;
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-image: url('https://assets.albiononline.com/assets/images/killboard/gear.png?u90a4772a');
+
+				&__Item {
+					margin: auto;
+					position: absolute;
+
+					width: 105px / 480px * 100%;
+					height: 105px / 520px * 100%;
+
+					background-color: green;
+					opacity: .4;
+
+					& .Count {
+					}
+	
+					&.-Bag {
+						top: 34px / 480px * 100%;
+						left: 32px / 480px * 100%;
+					}
+
+					&.-Head {
+						top: 45px / 480px * 100%;
+						left: 0;
+						right: 0;
+					}
+
+					&.-Cape {
+						top: 34px / 480px * 100%;
+						right: 34px / 480px * 100%;
+					}
+
+					&.-MainHand {
+						top: -18%;
+						bottom: 0;
+						left: 60px / 480px * 100%;
+					}
+
+					&.-Armor {
+						top: -18%;
+						left: 0;
+						right: 0;
+						bottom: 0;
+					}
+
+					&.-OffHand {
+						top: -18%;
+						bottom: 0;
+						right: 60px / 480px * 100%;
+					}
+
+					&.-Food {
+						left: 32px / 480px * 100%;
+						bottom: 25%;
+					}
+
+					&.-Shoes {
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: -25%;
+					}
+
+					&.-Potion {
+						right: 32px / 480px * 100%;
+						bottom: 24%;
+					}
+
+					&.-Mount {
+						left: 0;
+						right: 0;
+						bottom: 6%;
+					}
+				}
+			}
+
+			&__Footer {
+				position: relative;
+
+				& .ItemPower {
+					margin: auto;
+					padding: 0;
+
+					position: absolute;
+					bottom: 0;
+
+					width: 60px;
+					height: 60px;
+
+					color: white;
+					font-size: 20px;
+					line-height: 60px;
+					text-align: center;
+
+					border-radius: 50%;
+					background-color: #5A5A54;
+				}
+			}
+		}
+
+		&__Details {
+			width: 240px / 1200px * 100%;
+			display: flex;
+			flex-direction: column;
+
+
+			&__Head {
+
+				& img {
+					display: block;
+					margin: 0 auto;
+					padding: 5px 0;
+
+					max-width: 90px;
+					height: auto;
+				}
+
+				& .Title {
+					margin: 0;
+					font-size: 25px;
+					font-weight: bold;
+					text-align: center;
+				}
+			}
+
+			&__Body {
+				padding-top: 10px;
+
+				& .Group, & .Participants {
+					margin: 0;
+					font-size: 17px;
+					padding: 0 8px;
+					line-height: 1;
+
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+				}
+
+				& .Participants {
+					margin-bottom: 10px;
+				}
+
+				& .Damage, & .Healing {
+					margin: 0;
+					padding: 0 8px;
+					font-size: 15px;
+
+					display: flex;
+					justify-content: space-between;
+				}
+
+				& .Damage {
+					color: darkred;					
+				}
+
+				& .Healing {
+					color: green;
+				}
+			}
+
+			&__Footer {
+				margin: auto;
+				margin-bottom: 0;
+				display: block;
+
+				& .DeathFame {
+
+					& .Icon {
+						display: inline-block;
+
+						width: 30px;
+						height: 30px;
+						vertical-align: middle;
+
+					  background-size: auto 30px;
+					  background-repeat: no-repeat;
+						background-image: url('https://assets.albiononline.com/assets/images/killboard/fame-list__icons.png');
+					  filter: drop-shadow(0 2px 2px rgba(0,0,0,.5));
+					}
+
+					& .Fame {
+						margin: 0;
+						line-height: 1;
+						font-size: 18px;
+						text-align: center;
+						font-weight: bold;
+						vertical-align: middle;
+					}
+				}
+
+				& .Time {
+					margin: 0;
+					padding: 5px 8px 15px;
+
+					font-size: 14px;
+					font-weight: 500;
+					text-align: center;
+				}
+			}
+		}
+
+		&__Inventory {
+			width: 100%;
+			height: auto;
+
+			display: flex;
+			flex-wrap: wrap;
+			align-items: flex-start;
+			justify-content: flex-start;
+
+			&__Head {
+				width: 100%;
+
+				& .Title {
+					margin: 0;
+					padding: 10px;
+
+					color: white;
+					font-size: 21px;
+					line-height: 1;
+					text-align: left;
+
+					background-color: #5A5A54;
+				}
+			}
+
+			& .Item {
+				position: relative;
+
+				width: 105px / 950px * 100vw;
+				height: 105px / 950px * 100vw;
+				max-width: 105px;
+				max-height: 105px;
+
+				background-color: green;
+				border: .1px solid red;
+				opacity: .4;
+
+				& .Count {
+
+				}
+			}
+		}
+
+		& .Item {
+
+			& .Count {
+				width: 20px;
+				height: 20px;
+
+				right: 0;
+				bottom: 0;
+				position: absolute;
+
+				font-size: 11px;
+				text-align: center;
+				font-weight: 500;
+				line-height: 22px;
+				z-index: 1;
+
+				color: red;
+				background-color: blue;
+				border-radius: 50%;
+			}
+		}
+	}
+}
+
+.ruBot {}
